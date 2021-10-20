@@ -4,3 +4,31 @@
     margin: 0;
     padding: 0;
 }
+body{
+    background-color: #39393A;
+}
+.container{
+    margin:5rem auto;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.square{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E6E6E6 ;
+    border: 1px solid #297373;
+}
+/* utility */
+.one{
+    width: calc(100%/10);
+    height: calc(100%/10);
+}
+.two{
+    width: calc(100%/9);
+}
+.trhee{
+    width: calc(100%/7);
+}
