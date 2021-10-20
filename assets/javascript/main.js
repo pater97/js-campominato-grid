@@ -7,7 +7,7 @@ con difficoltà 2 => tra 1 e 81
 con difficoltà 3 => tra 1 e 49
 */
 
-//definire variabili di inserimento 
+//definire variabile di inserimento 
 const stampSquare = document.querySelector(".container")
 //chiedere alll'utente attraverso un prompt il livello di difficoltà
 const gameDifficult = parseInt(prompt(`indica il livello di difficoltà che desideri, da 1 a 3`))
@@ -24,13 +24,25 @@ if(gameDifficult == 1){
 }else{
     alert(`!ATTENZIONE! il livello indicato non è disponibile`)
 }
-//test
-console.log(numCaselle);
-console.log(sizeSquare);
 //utilizzare una funzione per il ciclo for 
 function cycle (numero){
     for (let i = 1; i <= numero;i++){
-       const square = stampSquare.innerHTML += `<div class="square ${sizeSquare}">${i}</div>`
+        //creare un nuovo div
+        const square = document.createElement(`div`);
+        //creare variabile per inserimento testo
+        const text = document.createTextNode(i);
+        //inserire testo nel div
+        square.appendChild(text)
+        //aggiungere le classi da utilizzare
+        square.className=`square ${sizeSquare}`
+        //stampare il quadrato
+        stampSquare.append(square)
+        //al click aggiungere il background azzurro
+        square.addEventListener(`click`,function(){
+        square.style.backgroundColor="#85FFC7"
+    })
+    console.log(square);
     }
 }
-console.log(cycle(numCaselle));
+//invocare la funzione
+cycle(numCaselle);
